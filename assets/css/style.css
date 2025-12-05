@@ -1,0 +1,672 @@
+/* =======================================================
+  I used ChatGPT to get colors for my personal Brand Creation: 
+
+  Prompt 1: "Can you create a CSS with a whole color palette inspired 
+              on my personality I upload you some of my instagram pictures"
+
+  Prompt 2: "I love it I really think that aligns with my personality now 
+            can we add some color and an expert in visualization I really 
+            want to create my whole brand and do all my work based on this 
+            brand and I feel that something is missing like Mexican pink"
+
+  Prompt 3: "Yes integrate Mexican pink in my css but also other colors that 
+            align with my personality but that they are also good as an experience 
+            ind data visualizations consider accesibity of colors and color 
+            blindness for example and the bes ones for creating my brand and my work"
+
+  Prompt 4: "I would also like more color options and based on my roots like talavera 
+            or some tones of corn can you give me my colors in css?"
+  
+
+
+  DANIELA AYALA — PERSONAL BRAND CSS (FINAL EXTENDED EDITION)
+   Mexican Pink • Talavera Blue • Corn Gold • Cenote Teal • Sunset Coral
+   Accessible • Elegant • Professional • Mexican Heritage
+   Hybrid Model: Talavera Blue = Primary, MX Pink = Highlight
+   ======================================================= */
+
+:root {
+  /* -------------------------------------------------------
+     UX-SAFE NEUTRALS
+     ------------------------------------------------------- */
+  --bg: #FAF9F6;              /* warm white (handmade paper) */
+  --bg-alt: #F1EEE8;          /* soft cream */
+  --card-bg: #FFFFFF;
+  --card-border: #E2DFD7;
+
+  --text: #3A3A3A;            
+  --text-muted: #7A7A7A;
+
+  /* -------------------------------------------------------
+     BRAND SIGNATURE COLORS
+     ------------------------------------------------------- */
+  --mx-pink: #E4007C;          /* highlight */
+  --primary: #1F4E79;          /* talavera blue */
+  --primary-dark: #0D3B66;     /* cobalt */
+  --accent: #2A9D8F;           /* cenote teal */
+  --accent-dark: #264653;      /* forest */
+  --highlight: #E9C46A;        /* sand yellow */
+
+  /* -------------------------------------------------------
+     TALAVERA CERAMIC COLORS
+     ------------------------------------------------------- */
+  --talavera-blue: #1F4E79;
+  --talavera-cobalt: #0D3B66;
+  --talavera-yellow: #F2C94C;
+
+  /* -------------------------------------------------------
+     CORN HERITAGE COLORS (Maíz criollo)
+     ------------------------------------------------------- */
+  --corn-gold: #DFAF2B;
+  --corn-burgundy: #7A1F2B;
+  --corn-cream: #F4E9D8;
+
+  /* -------------------------------------------------------
+     LANDSCAPE COLORS
+     ------------------------------------------------------- */
+  --stone-beige: #D7C9B8;
+  --limestone: #C6B49E;
+  --lagoon-mint: #A8E6CF;
+  --sky-soft: #D0E8F2;
+
+  /* -------------------------------------------------------
+     DATAVIZ COLORS — COLORBLIND SAFE
+     ------------------------------------------------------- */
+
+  --cat-1: var(--mx-pink);
+  --cat-2: var(--accent);
+  --cat-3: #3E6FA8;   
+  --cat-4: #F4A261;   
+  --cat-5: #8A5FBF;   
+
+  --cat-6: var(--talavera-blue);
+  --cat-7: var(--corn-gold);
+
+ /* Sequential palette: Talavera Blue → Deep Cobalt */
+    --seq-1: #E9EEF4;   /* very light blue wash */
+    --seq-2: #AFC6DD;   /* soft Talavera tint */
+    --seq-3: #3E6FA8;   /* Sky Navy intermediate */
+    --seq-4: #1F4E79;   /* Talavera Blue (brand primary) */
+    --seq-5: #0D3B66;   /* Deep Cobalt for intense values */
+
+    --seq-talavera-1: #F1EEE8;
+    --seq-talavera-2: #D0E8F2;  /* light sky */
+    --seq-talavera-3: #1F4E79;  /* Talavera Blue */
+    --seq-talavera-4: #7A1F2B;  /* Corn Burgundy (deep contrast) */
+
+
+ /* Diverging palette: Cenote Teal → Cream → Mexican Pink */
+    --div-neg: #2A9D8F;   /* cool cenote teal */
+    --div-mid: #F4E9D8;   /* neutral corn cream */
+    --div-pos: #E4007C;   /* warm Mexican Pink */
+
+
+  /* -------------------------------------------------------
+     RADII + SHADOWS
+     ------------------------------------------------------- */
+  --border-radius-lg: 1.25rem;
+  --border-radius-md: 0.75rem;
+
+  --container-width: 1120px;
+
+  --shadow-soft: 0 6px 16px rgba(0,0,0,0.08);
+  --shadow-card: 0 10px 25px rgba(0,0,0,0.06);
+}
+
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html, body { margin: 0; padding: 0; }
+
+body {
+  font-family: "Inter", system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+img { max-width: 100%; display: block; }
+
+
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+.section { padding: 4rem 0; }
+
+.section--alt { background: var(--bg-alt); }
+
+
+.section-two-col-inner {
+  display: grid;
+  gap: 2.5rem;
+}
+
+.section-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.section-col--image { align-items: center; }
+
+@media (min-width: 768px) {
+  .section-two-col-inner {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+  }
+}
+
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255,255,255,0.9);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--card-border);
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.logo {
+  font-weight: 800;
+  font-size: 1.35rem;
+  letter-spacing: 0.1em;
+  color: var(--primary-dark);
+  text-transform: uppercase;
+}
+
+.nav-desktop {
+  display: none;
+  gap: 1.5rem;
+}
+
+.nav-desktop a {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.nav-desktop a:hover { color: var(--primary-dark); }
+
+.nav-toggle {
+  font-size: 1.7rem;
+  background: none;
+  border: none;
+  color: var(--text);
+}
+
+.nav-mobile {
+  display: none;
+  flex-direction: column;
+  padding: 0 1.25rem 1rem;
+  border-bottom: 1px solid var(--card-border);
+  background: white;
+}
+
+.nav-mobile a {
+  padding: 0.4rem 0;
+  color: var(--text-muted);
+}
+
+.nav-mobile a:hover { color: var(--primary); }
+
+.nav-mobile.open { display: flex; }
+
+@media (min-width: 768px) {
+  .nav-desktop { display: flex; }
+  .nav-toggle { display: none; }
+  .nav-mobile { display: none !important; }
+}
+
+
+.eyebrow {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.hero-title {
+  font-size: 0.001 rem;
+  line-height: 1.3 ;
+  margin-bottom: 1 rem;
+  font-weight: 600;
+  color: var(--primary-dark);
+}
+
+.hero-subtitle {
+  font-size: 1 rem;
+  font-weight: 600;
+  margin-bottom: 0.4 rem;
+}
+
+
+.hero-subtitle-accent {
+  color: var(--mx-pink);
+  margin-left: 2 rem;
+}
+
+@media (min-width: 768px) {
+  .hero-title { font-size: 2.5 rem; font-weight: 800; margin-bottom: 0.4 rem;}
+  .hero-subtitle { font-size: 2 rem; font-weight: 800; margin-bottom: 0.4 rem;}
+}
+
+
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--accent-dark);
+  position: relative;
+}
+
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  bottom: -0.45rem;
+  left: 0;
+  width: 60px;
+  height: 4px;
+  border-radius: 999px;
+  background: var(--mx-pink);
+}
+
+.section-header--center {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.section-header--center .section-title::after {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.section-text {
+  max-width: 650px;
+  font-size: 0.95rem;
+}
+
+.section-text--muted {
+  color: var(--text-muted);
+  margin: 0 auto;
+}
+
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 0.7rem 1.6rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+.btn--primary {
+  background: var(--primary);
+  color: white;
+  box-shadow: 0 6px 20px rgba(31,78,121,0.35);
+}
+
+.btn--primary:hover {
+  background: var(--primary-dark);
+  transform: translateY(-1px);
+}
+
+.btn--small { padding: 0.5rem 1.2rem; }
+
+.btn--full { width: 100%; }
+
+
+
+.input {
+  width: 100%;
+  height: 3rem;
+  border-radius: 999px;
+  border: 1px solid var(--card-border);
+  padding: 0 1rem;
+}
+
+.input:focus {
+  border-color: var(--primary-dark);
+  box-shadow: 0 0 0 2px rgba(31,78,121,0.25);
+}
+
+
+.avatar-ring {
+  width: 12rem;
+  height: 12rem;
+  border-radius: 999px;
+  border: 3px solid var(--highlight);
+  background: rgba(233,196,106,0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar-ring-inner {
+  width: 100%;
+  height: 100%;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .avatar-ring {
+    width: 16rem;
+    height: 16rem;
+  }
+}
+
+.social-links {
+  display: flex;
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+
+.social-links a {
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 999px;
+  border: 1px solid var(--card-border);
+  background: var(--card-bg);
+  color: var(--text-muted);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-links a:hover {
+  background: var(--mx-pink);
+  border-color: var(--mx-pink);
+  color: white;
+}
+
+.social-links a svg {
+  width: 20px;
+  height: 20px;
+  stroke: var(--text-muted);
+}
+
+.social-links a:hover svg {
+  background: var(white);
+  color: white;
+  transform: translateY(-2px);
+}
+
+
+.skills-list {
+  margin-top: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.skill-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.skill-bar {
+  width: 100%;
+  height: 0.6rem;
+  border-radius: 999px;
+  background: var(--bg-alt);
+}
+
+.skill-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary), var(--mx-pink));
+}
+
+
+.grid { display: grid; gap: 1.25rem; }
+
+.grid--services { grid-template-columns: repeat(2,1fr); }
+
+@media (min-width: 768px) {
+  .grid--services { grid-template-columns: repeat(3,1fr); }
+}
+
+@media (min-width: 1024px) {
+  .grid--services { grid-template-columns: repeat(4,1fr); }
+}
+
+.grid--projects { grid-template-columns: 1fr; gap: 2rem; }
+
+@media (min-width: 768px) {
+  .grid--projects { grid-template-columns: repeat(3,1fr); }
+}
+
+.grid--testimonials { grid-template-columns: 1fr; }
+
+@media (min-width: 768px) {
+  .grid--testimonials { grid-template-columns: repeat(3,1fr); }
+}
+
+
+.card {
+  background: var(--card-bg);
+  border-radius: var(--border-radius-lg);
+  border: 1px solid var(--card-border);
+  padding: 1.4rem 1.2rem;
+  box-shadow: var(--shadow-card);
+}
+
+
+.service-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  transition: 0.25s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--primary);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+}
+
+.service-icon { font-size: 1.8rem; }
+
+.card-title { font-size: 1rem; font-weight: 800; }
+
+
+.project-images {
+  position: relative;
+  height: 235px;
+  border-radius: var(--border-radius-lg);
+
+  overflow: hidden;
+
+  background: linear-gradient(135deg, var(--corn-cream), var(--highlight));
+}
+
+.project-image-wrapper {
+  position: absolute;
+  height: 85%;
+  width: 70%;
+  overflow: hidden;
+  border-radius: 1rem;
+  box-shadow: var(--shadow-card);
+}
+
+.project-image-wrapper--front {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 88%;
+  height: 88%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.project-image-wrapper--back {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 92%;
+  height: 92%;
+  transform: translate(-50%, -50%);
+  opacity: 0.25;
+}
+
+.project-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;     
+  object-position: center; 
+  display: block;
+}
+
+.project-link {
+  display: inline-block;
+  margin-top: 0.75rem;
+  padding: 0.5rem 0.9rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--accent-dark);
+  border: 2px solid var(--accent-dark);
+  border-radius: var(--border-radius-md);
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.project-link:hover {
+  background: var(--accent-dark);
+  color: white;
+  transform: translateY(-2px);
+}
+
+
+.tag {
+  background: var(--accent);
+  color: white;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.8rem;
+  border-radius: 999px;
+}
+
+
+
+.pill {
+  border-radius: 999px;
+  padding: 0.4rem 0.95rem;
+  border: 1px solid var(--card-border);
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+.pill--active {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+}
+
+
+.contact-inner {
+  max-width: 640px;
+}
+
+.contact-form {
+  margin-top: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+@media (min-width: 640px) {
+  .contact-form { flex-direction: row; }
+}
+
+
+.footer-top {
+  background: var(--bg-alt);
+  padding: 2.5rem 0;
+  border-top: 1px solid var(--card-border);
+}
+
+.footer-title {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.footer-nav a {
+  color: var(--text-muted);
+  margin: 0 0.75rem;
+}
+
+.footer-nav a:hover { color: var(--primary-dark); }
+
+.footer-social a {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 999px;
+  border: 1px solid var(--card-border);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-social a:hover {
+  background: var(--mx-pink);
+  border-color: var(--mx-pink);
+  color: white;
+}
+
+.site-footer {
+  padding: 1rem;
+  text-align: center;
+  border-top: 1px solid var(--card-border);
+  color: var(--text-muted);
+}
+
+.site-footer b {
+  color: var(--primary);
+}
+
+.section-subtitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.about-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem;
+}
+
+.about-list li {
+  margin-bottom: 1rem;
+  padding-left: 0.5rem;
+  border-left: 3px solid var(--primary);
+}
+
+.footer-credit-link {
+  margin-left: 0.35rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+.footer-credit-link:hover {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
